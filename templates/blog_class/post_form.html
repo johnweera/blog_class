@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    {{ form.media }}
+    <style>
+      .ql-toolbar {
+        position: sticky;
+        top: 0;
+        z-index: 1000; /* Ensure it appears above other elements */
+        background-color: white; /* Optional: to match the page background */
+      }
+    </style>
+  </head>
+  <body>
+    <p>Create</p>
+    <form method="post">
+      {% csrf_token %} {{ form.as_p }}
+      <button type="submit">Submit</button>
+    </form>
+  </body>
+</html>

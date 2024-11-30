@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+
+    <!-- Including Highlight.js CSS -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.3.1/styles/vs2015.min.css"
+    />
+
+    <!-- Including Highlight.js Script -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.3.1/highlight.min.js"></script>
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        const preElements = document.querySelectorAll("pre");
+
+        preElements.forEach((pre) => {
+          const content = pre.innerHTML;
+          const code = document.createElement("code");
+
+          code.innerHTML = content;
+          pre.innerHTML = "";
+          pre.appendChild(code);
+
+          // Highlight.js syntax highlighting
+          hljs.highlightElement(code);
+        });
+      });
+    </script>
+  </head>
+  <body>
+    <p>Detail</p>
+    <h2>{{post.title}}</h2>
+    <p>{{post.content.html | safe}}</p>
+    <p>
+      <a href="{% url 'blog_class:update' post.id %}">Edit</a> |
+      <a href="{% url 'blog_class:delete' post.id %}">Delete</a>
+    </p>
+  </body>
+</html>
