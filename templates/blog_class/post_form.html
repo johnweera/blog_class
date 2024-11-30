@@ -15,7 +15,9 @@
     </style>
   </head>
   <body>
-    <p>Create</p>
+    <h1>WebApp101</h1>
+    {% include 'home/navbar.html' %}
+    <h2>Create</h2>
     <form method="post">
       {% csrf_token %} {{ form.as_p }}
       <button type="submit">Submit</button>

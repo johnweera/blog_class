@@ -1,17 +1,11 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
-  </head>
-  <body>
-    <p>Confirm Delete</p>
-    <h2>{{ post.title }}</h2>
-    <p>Are you sure you want to delete this post?</p>
-    <form method="POST">
-      {% csrf_token %}
-      <button type="submit">Yes, delete</button>
-    </form>
-  </body>
-</html>
+{% extends 'home/base.html' %}
+<span>{% include 'home/navbar.html' %}</span>
+{% block content %}
+<h2>Confirm Delete</h2>
+<h2>{{ post.title }}</h2>
+<p>Are you sure you want to delete this post?</p>
+<form method="POST">
+  {% csrf_token %}
+  <button type="submit">Yes, delete</button>
+</form>
+{% endblock %}

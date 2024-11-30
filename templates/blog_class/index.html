@@ -1,15 +1,10 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
-  </head>
-  <body>
-    <p>Blog Class</p>
-    <a href="{% url 'blog_class:add' %}">New Post</a>
-    <p>
-      <a href="{% url 'blog_class:list' %}">All Posts</a>
-    </p>
-  </body>
-</html>
+{% extends 'home/base.html' %} <span> {%include 'home/navbar.html'%} </span>
+{% block content %}
+
+<h2>Blog Class</h2>
+<a href="{% url 'blog_class:add' %}">New Post</a>
+<p>
+  <a href="{% url 'blog_class:list' %}">All Posts</a>
+</p>
+
+{% endblock %}

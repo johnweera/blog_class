@@ -32,7 +32,9 @@
     </script>
   </head>
   <body>
-    <p>Detail</p>
+    <h1>WebApp101</h1>
+    {% include 'home/navbar.html' %}
+    <h2>Detail</h2>
     <h2>{{post.title}}</h2>
     <p>{{post.content.html | safe}}</p>
     <p>
